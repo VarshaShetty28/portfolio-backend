@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully! 🚀");
+});
+
+
 // Email Sending Route
 app.post("/send-email", async (req, res) => {
   const { username, email, phoneNumber, subject, message } = req.body;
